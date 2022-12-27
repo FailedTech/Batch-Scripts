@@ -1,4 +1,5 @@
 # Simple Windows Auto Logon Handler
+
 ```diff
 -! Warning !- Run As Administrator
 ```
