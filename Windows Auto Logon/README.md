@@ -1,3 +1,3 @@
 # Simple Windows Auto Logon Handler
         Run As Administrator    
-![alt text](https://github.com/FailedTech/Batch-Scripts/tree/main/Windows%20Auto%20Logon/Menu.png?raw=true)
+![alt text](https://github.com/FailedTech/Batch-Scripts/blob/main/Windows%20Auto%20Logon/Menu.png?raw=true)
