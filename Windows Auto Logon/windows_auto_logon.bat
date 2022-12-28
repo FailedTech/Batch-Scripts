@@ -32,10 +32,10 @@ GOTO :UserInput
 
 :UserInput
 IF %ERRORLEVEL%==1 (
-CAll :DefaultUserName
-CAll :DefaultPassword
-CAll :DefaultDomainName
-GOTO :Menu
+     CAll :DefaultUserName
+     CAll :DefaultPassword
+     CAll :DefaultDomainName
+     GOTO :Menu
 ) 
 IF %ERRORLEVEL%==2 (
     CAll :DefaultUserName
