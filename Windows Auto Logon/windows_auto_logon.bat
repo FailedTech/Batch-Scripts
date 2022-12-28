@@ -7,12 +7,18 @@ GOTO :RawData
 
 :Menu
 CLS
-ECHO [32m################################################[0m
-ECHO [32m#              Windows Auto Logon              #[0m
-ECHO [0m#                      v1.0                    #[0m
-ECHO [0m#             Powered By FailedTech            #[0m
-ECHO [31m#         (C) 2022 All Rights Reserved         #[0m
-ECHO [31m################################################[0m
+ECHO [94m################################################[0m
+ECHO [94m#[0m[95m _____     _ _          _[0m[92m _____         _     [0m[94m#[0m
+ECHO [94m#[0m[95m^|  ___^|_ _^(_^) ^| ___  __^|[0m[92m ^|_   _^|__  ___^| ^|__  [0m[94m#[0m
+ECHO [94m#[0m[95m^| ^|_ / _` ^| ^| ^|/ _ \/ _` ^|[0m[92m ^| ^|/ _ \/ __^| '_ \ [0m[94m#[0m
+ECHO [94m#[0m[95m^|  _^| ^(_^| ^| ^| ^|  __/ ^(_^| ^|[0m[92m ^| ^|  __/ ^(__^| ^| ^| ^|[0m[94m#[0m
+ECHO [94m#[0m[95m^|_^|  \__,_^|_^|_^|\___^|\__,_^|[0m[92m ^|_^|\___^|\___^|_^| ^|_^|[0m[94m#[0m
+ECHO [94m#[0m[93m                                              [0m[94m#[0m
+ECHO [94m#[0m[93m              Windows Auto Logon              [0m[94m#[0m
+ECHO [94m#[0m[93m                      v1.0                    [0m[94m#[0m
+ECHO [94m#[0m[93m             Powered By [35mFailed[0m[32mTech[0m            [0m[94m#[0m
+ECHO [94m#[0m[31m         [0m[92m(C)[0m[31m 2022 All Rights Reserved         [0m[94m#[0m
+ECHO [94m################################################[0m
 ECHO [33m[1][0m [32mInput Data[0m
 ECHO [33m[2][0m [94mDefaultUserName =[0m[35m %DUN% [0m
 ECHO [33m[3][0m [94mDefaultPassword =[0m[35m %DP% [0m
@@ -89,33 +95,33 @@ REM > nul Redirect the output to nul
 REM > nul 2> nul Redirect Errors to nul
 
 reg add %reg_path% /f /v "DefaultUserName" /d %DUN% > nul 2> nul && (
-     ECHO Successfully added DefaultUserName ) || ( ECHO Failed to add DefaultUserName )
+     ECHO [92mSuccessfully added DefaultUserName[0m ) || ( ECHO [91mFailed to add DefaultUserName[0m )
 reg add %reg_path% /f /v "DefaultPassword" /d %DP% > nul 2> nul && (
-     ECHO Successfully added DefaultPassword ) || ( ECHO Failed to add DefaultPassword )
+     ECHO [92mSuccessfully added DefaultPassword[0m ) || ( ECHO [91mFailed to add DefaultPassword[0m )
 reg add %reg_path% /f /v "AutoAdminLogon" /d "1" > nul 2> nul && (
-     ECHO Successfully added AutoAdminLogon ) || ( ECHO Failed to add AutoAdminLogon )
+     ECHO [92mSuccessfully added AutoAdminLogon[0m ) || ( ECHO [91mFailed to add AutoAdminLogon[0m )
 IF %DDN%=="Not Set" ( 
     reg query %reg_path% /v "DefaultDomainName" > nul 2> nul && (
-         ECHO DefaultDomainName Key Found ,Trying to remove it
+         ECHO [91mDefaultDomainName Key Found ,Trying to remove it[0m
          reg delete %reg_path% /f /v "DefaultDomainName" > nul 2> nul && (
-         ECHO Successfully removed DefaultDomainName ) || ( 
-            ECHO Failed to remove DefaultDomainName )
-            ) || ( ECHO DefaultDomainName Key Not Found )
+         ECHO [92mSuccessfully removed DefaultDomainName[0m ) || ( 
+            ECHO [91mFailed to remove DefaultDomainName[0m )
+            ) || ( ECHO [91mDefaultDomainName Key Not Found[0m )
 ) ELSE (
     reg add %reg_path% /f /v "DefaultDomainName" /d %DDN% > nul 2> nul && (
-         ECHO Successfully added DefaultDomainName ) || ( ECHO Failed to add DefaultDomainName )
+         ECHO [92mSuccessfully added DefaultDomainName[0m ) || ( ECHO [91mFailed to add DefaultDomainName[0m )
 )
 PAUSE
 EXIT /B 0
 
 :RMReg
 reg delete %reg_path% /f /v "DefaultUserName" > nul 2> nul && (
-     ECHO Successfully removed DefaultUserName ) || ( ECHO Failed to remove DefaultUserName )
+     ECHO [92mSuccessfully removed DefaultUserName[0m ) || ( ECHO [91mFailed to remove DefaultUserName[0m )
 reg delete %reg_path% /f /v "DefaultPassword" > nul 2> nul && (
-     ECHO Successfully removed DefaultPassword ) || ( ECHO Failed to remove DefaultPassword )
+     ECHO [92mSuccessfully removed DefaultPassword[0m ) || ( ECHO [91mFailed to remove DefaultPassword[0m )
 reg delete %reg_path% /f /v "DefaultDomainName" > nul 2> nul && (
-     ECHO Successfully removed DefaultUserName ) || ( ECHO Failed to remove DefaultDomainName )
+     ECHO [92mSuccessfully removed DefaultUserName[0m ) || ( ECHO [91mFailed to remove DefaultDomainName[0m )
 reg delete %reg_path% /f /v "AutoAdminLogon" > nul 2> nul && (
-     ECHO Successfully removed AutoAdminLogon ) || ( ECHO Failed to remove AutoAdminLogon )
+     ECHO [92mSuccessfully removed AutoAdminLogon[0m ) || ( ECHO [91mFailed to remove AutoAdminLogon[0m )
 PAUSE
 EXIT /B 0
